@@ -20,9 +20,10 @@ print(device)
 def dataReader():
     Input = []
     label = []
-    for i in range(1, 11):
+    for i in range(1, 4):
         data_path = '../Dataset/Capture_' + str(i) + '/'
         label_path = '../Dataset/KeyCapture_' + str(i) + '.csv'
+        print(data_path)
         for file in os.listdir(data_path):
             img = cv2.imread(data_path + file)
             # img = cv2.resize(img, (122, 141))
@@ -42,7 +43,7 @@ def dataReader():
 
     return Input, label
 
-
+print('aaaaaaaaaaa')
 data_x, data_y = dataReader()
 for i in range(len(data_y)):
     if data_y[i][0] != 0 or data_y[i][1] != 0:
